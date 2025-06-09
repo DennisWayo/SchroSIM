@@ -2,9 +2,8 @@
 
 **SchroSIM** is a Schrödinger-inspired, scalable, and hardware-agnostic simulator for quantum photonic circuits. Built in Swift and optimized for Apple’s Metal framework, SchroSIM supports both continuous-variable (CV) and non-Gaussian quantum operations, offering a modular architecture suitable for education, research, and photonic hardware prototyping.
 
----
 
-## 🚀 Project Highlights
+### 🚀 Project Highlights
 
 - **Language**: Swift + SwiftUI + Metal
 - **Simulator Types**: Gaussian (symplectic formalism) and Non-Gaussian (Fock/tensor-based)
@@ -13,9 +12,9 @@
 - **Compiler**: Intermediate Representation (IR) for hardware-agnostic mapping
 - **Backends**: CPU and GPU accelerated simulation
 
----
 
-## 📄 Concept Note
+
+### Concept Note
 This repository accompanies the technical concept note:
 
 **Dennis Wayo**, "SchroSIM: A Schrödinger-Inspired Scalable Quantum Photonic Circuit Simulator for Hardware-Agnostic Quantum Computing," arXiv:2025.xxxxx
@@ -25,7 +24,7 @@ This repository accompanies the technical concept note:
 
 ---
 
-## 📦 Project Structure (WIP)
+### Project Structure (WIP)
 
 ```bash
 schrosim/
@@ -41,9 +40,8 @@ schrosim/
 └── CONTRIBUTING.md
 ```
 
----
 
-## 🛠️ Roadmap
+### Roadmap
 
 | Version | Features |
 |---------|----------|
@@ -52,9 +50,8 @@ schrosim/
 | **v0.3** | HAL, benchmarking tasks (GBS, cluster states) |
 | **v1.0** | Release candidate, reproducibility scripts, documentation |
 
----
 
-## 🤝 Contributing
+### Contributing
 We welcome contributors from the quantum, photonic, and Swift communities. To get started:
 
 1. Fork the repository
@@ -63,16 +60,14 @@ We welcome contributors from the quantum, photonic, and Swift communities. To ge
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for style guides and module naming conventions.
 
----
 
-## 📧 Contact
+### 📧 Contact
 **Dennis Wayo**  
 Quantum Computing Researcher and Software Developer, SchroSIM Project  
 🔗 [GitHub](https://github.com/DennisWayo/SchroSIM)
 
----
 
-## 📜 License
+### 📜 License
 MIT License. See [LICENSE](LICENSE) for details.
 
 ---
