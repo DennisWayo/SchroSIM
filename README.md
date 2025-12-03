@@ -1,4 +1,3 @@
-<p align="center">
 
   <!-- Core tech badges -->
   <a href="https://github.com/DennisWayo/SchroSIM">
@@ -20,9 +19,9 @@
     <img src="https://img.shields.io/badge/version-v0.1-orange" alt="Version: v0.1">
   </a>
 
-</p>
 
-<p align="center">
+
+
 
   <!-- Activity / community badges -->
   <a href="https://github.com/DennisWayo/SchroSIM/stargazers">
@@ -44,7 +43,6 @@
     <img src="https://img.shields.io/github/last-commit/DennisWayo/SchroSIM?color=brightgreen" alt="Last commit">
   </a>
 
-</p>
 
 # SchroSIM
 
