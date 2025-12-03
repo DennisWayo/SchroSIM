@@ -19,7 +19,7 @@ This repository accompanies the technical concept note:
 
 **Dennis Wayo**, "SchroSIM: A Schrödinger-Inspired Scalable Quantum Photonic Circuit Simulator for Hardware-Agnostic Quantum Computing," arXiv:2025.xxxxx
 
- [arXiv Link](https://arxiv.org/abs/2025.xxxxx)  
+ [TechRxiv Link]([https://arxiv.org/abs/2025.xxxxx](https://www.techrxiv.org/users/924890/articles/1304432-schrosim-a-schr%C3%B6dinger-inspired-scalable-quantum-photonic-circuit-simulator-for-hardware-agnostic-quantum-computing))  
  [PDF Download](docs/SchroSIM_ConceptNote.pdf)
 
 ---
@@ -73,3 +73,7 @@ MIT License. See [LICENSE](LICENSE) for details.
 ---
 
 > This repository serves as the implementation base for the SchroSIM technical concept note and will track its open-source development from concept to release.
+
+### Funders
+This project will acknowledge support from funding organizations upon award.  
+A dedicated section will be updated here to credit any sponsors who contribute to SchroSIM.
