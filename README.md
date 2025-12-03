@@ -1,4 +1,3 @@
-<p align="center">
 
   <a href="https://github.com/DennisWayo/SchroSIM">
     <img src="https://img.shields.io/badge/Swift-black?logo=swift&logoColor=white&style=flat-square" alt="Swift">
@@ -18,8 +17,6 @@
   <a href="https://github.com/DennisWayo/SchroSIM/network/members">
     <img src="https://img.shields.io/github/forks/DennisWayo/SchroSIM?style=flat-square&color=black" alt="Forks">
   </a>
-
-</p>
 
 
 # SchroSIM
