@@ -1,47 +1,25 @@
+<p align="center">
 
-  <!-- Core tech badges -->
   <a href="https://github.com/DennisWayo/SchroSIM">
-    <img src="https://img.shields.io/badge/language-Swift-F05138?logo=swift&logoColor=white" alt="Language: Swift">
-  </a>
-  <a href="https://github.com/DennisWayo/SchroSIM">
-    <img src="https://img.shields.io/badge/framework-SwiftUI-0066CC?logo=apple&logoColor=white" alt="Framework: SwiftUI">
+    <img src="https://img.shields.io/badge/Swift-black?logo=swift&logoColor=white&style=flat-square" alt="Swift">
   </a>
   <a href="https://developer.apple.com/metal/">
-    <img src="https://img.shields.io/badge/acceleration-Metal-1F1F1F?logo=apple&logoColor=white" alt="Acceleration: Metal">
+    <img src="https://img.shields.io/badge/Metal-black?logo=apple&logoColor=white&style=flat-square" alt="Metal">
   </a>
   <a href="https://github.com/DennisWayo/SchroSIM">
-    <img src="https://img.shields.io/badge/platform-macOS_Apple_Silicon-000000?logo=apple&logoColor=white" alt="Platform: macOS Apple Silicon">
+    <img src="https://img.shields.io/badge/macOS_Apple_Silicon-black?logo=apple&logoColor=white&style=flat-square" alt="macOS Apple Silicon">
   </a>
   <a href="https://github.com/DennisWayo/SchroSIM/blob/main/LICENSE">
-    <img src="https://img.shields.io/badge/license-MIT-blue" alt="License: MIT">
+    <img src="https://img.shields.io/badge/MIT_License-black?style=flat-square" alt="MIT License">
   </a>
-  <a href="https://github.com/DennisWayo/SchroSIM/releases">
-    <img src="https://img.shields.io/badge/version-v0.1-orange" alt="Version: v0.1">
-  </a>
-
-
-
-
-
-  <!-- Activity / community badges -->
   <a href="https://github.com/DennisWayo/SchroSIM/stargazers">
-    <img src="https://img.shields.io/github/stars/DennisWayo/SchroSIM?style=social" alt="GitHub Stars">
+    <img src="https://img.shields.io/github/stars/DennisWayo/SchroSIM?style=flat-square&color=black" alt="Stars">
   </a>
   <a href="https://github.com/DennisWayo/SchroSIM/network/members">
-    <img src="https://img.shields.io/github/forks/DennisWayo/SchroSIM?style=social" alt="GitHub Forks">
+    <img src="https://img.shields.io/github/forks/DennisWayo/SchroSIM?style=flat-square&color=black" alt="Forks">
   </a>
-  <a href="https://github.com/DennisWayo/SchroSIM/issues">
-    <img src="https://img.shields.io/github/issues/DennisWayo/SchroSIM?color=informational" alt="Open Issues">
-  </a>
-  <a href="https://github.com/DennisWayo/SchroSIM/pulls">
-    <img src="https://img.shields.io/github/issues-pr/DennisWayo/SchroSIM?color=yellow" alt="Open PRs">
-  </a>
-  <a href="https://github.com/DennisWayo/SchroSIM/releases">
-    <img src="https://img.shields.io/github/downloads/DennisWayo/SchroSIM/total?logo=github" alt="Total Downloads">
-  </a>
-  <a href="https://github.com/DennisWayo/SchroSIM/commits/main">
-    <img src="https://img.shields.io/github/last-commit/DennisWayo/SchroSIM?color=brightgreen" alt="Last commit">
-  </a>
+
+</p>
 
 
 # SchroSIM
