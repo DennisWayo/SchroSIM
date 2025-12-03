@@ -1,3 +1,11 @@
+![Language](https://img.shields.io/badge/language-Swift-F05138?logo=swift&logoColor=white)
+![Framework](https://img.shields.io/badge/framework-SwiftUI-0066CC?logo=apple&logoColor=white)
+![GPU](https://img.shields.io/badge/acceleration-Metal-1F1F1F?logo=apple&logoColor=white)
+![Platform](https://img.shields.io/badge/platform-macOS_Apple_Silicon-000000?logo=apple&logoColor=white)
+![Status](https://img.shields.io/badge/status-active-brightgreen)
+![License](https://img.shields.io/badge/license-MIT-blue)
+![Version](https://img.shields.io/badge/version-v0.1-orange)
+
 # SchroSIM
 
 **SchroSIM** is a Schrödinger-inspired, scalable, and hardware-agnostic simulator for quantum photonic circuits. Built in Swift and optimized for Apple’s Metal framework, SchroSIM supports both continuous-variable (CV) and non-Gaussian quantum operations, offering a modular architecture suitable for education, research, and photonic hardware prototyping.
