@@ -18,7 +18,7 @@
 - **Platform Support**: macOS (M1/M2), future WebGPU-ready
 - **GUI**: Drag-and-drop photonic circuit builder
 - **Compiler**: Intermediate Representation (IR) for hardware-agnostic mapping
-- **Backends**: CPU and GPU accelerated simulation
+- **Backends**: CPU/GPU/QPU accelerated simulation
 
 
 
