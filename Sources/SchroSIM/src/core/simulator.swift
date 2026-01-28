@@ -16,11 +16,13 @@ public enum SimulatorError: Error, CustomStringConvertible {
 
 public enum Simulator {
 
-    // NOTE: intentionally NOT Equatable
+    // NOTE: intentionally NOT Equatable (contains floating measurement samples).
     public struct SimulationResult: Sendable {
         public let finalState: GaussianState
         public let measurements: [MeasurementEvent]
     }
+
+    // MARK: - Public API
 
     public static func runAndMeasure(
         _ circuit: Circuit,
@@ -38,10 +40,12 @@ public enum Simulator {
 
         var events: [MeasurementEvent] = []
 
-        for (idx, g) in circuit.gates.enumerated() {
-            switch g {
+        for (idx, gate) in circuit.gates.enumerated() {
+            switch gate {
 
-            // --- Measurements (sample + condition) ---
+            // ==========================
+            // Measurements (sample + condition)
+            // ==========================
 
             case .measureHomodyne(let mode, let theta):
                 let (y, post) = try GaussianMeasurement.sampleHomodyne(
@@ -71,7 +75,9 @@ public enum Simulator {
                     )
                 )
 
-            // --- Gaussian channels (non-unitary; apply here, NOT in lowering) ---
+            // ==========================
+            // Non-unitary Gaussian channels (apply here, NOT in lowering)
+            // ==========================
 
             case .loss(let eta, let mode):
                 state = try GaussianChannels.applyLoss(state, mode: mode, eta: eta)
@@ -79,15 +85,29 @@ public enum Simulator {
             case .thermalLoss(let eta, let nTh, let mode):
                 state = try GaussianChannels.applyThermalLoss(state, mode: mode, eta: eta, nTh: nTh)
 
-            // --- Future / placeholders ---
+            // ==========================
+            // Non-Gaussian injection (IR-level)
+            // ==========================
+            // For now:
+            // - Fock/cat: reject (needs Fock backend)
+            // - GKP: optionally approximate as Gaussian additive noise (if you want)
+            //
+            case .injectNonGaussian(let ng):
+                try applyNonGaussianInjection(&state, ng, circuitModes: circuit.modes)
+
+            // ==========================
+            // Placeholders
+            // ==========================
 
             case .noisePlaceholder:
-                throw SimulatorError.unsupportedGate(g)
+                throw SimulatorError.unsupportedGate(gate)
 
-            // --- Gaussian unitary/affine ops (lower -> symplectic apply) ---
+            // ==========================
+            // Gaussian unitaries / affine ops (lower -> apply)
+            // ==========================
 
-            default:
-                let op = try lower(g, modes: circuit.modes)
+            case .phase, .squeeze, .beamSplitter, .displace:
+                let op = try lower(gate, modes: circuit.modes)
                 state = SymplecticEvolution.apply(op, to: state)
             }
         }
@@ -95,26 +115,21 @@ public enum Simulator {
         return SimulationResult(finalState: state, measurements: events)
     }
 
-    /// Backwards-compatible API (no measurements returned)
+    /// Convenience API: ignores measurement record (but still samples internally).
     public static func run(
         _ circuit: Circuit,
         initial: GaussianState? = nil
     ) throws -> GaussianState {
-
         var rng: any RandomNumberGenerator = SystemRandomNumberGenerator()
-        let result = try runAndMeasure(circuit, initial: initial, rng: &rng)
-        return result.finalState
+        return try runAndMeasure(circuit, initial: initial, rng: &rng).finalState
     }
 
     // MARK: - Lowering (Gate -> CVGate)
     // Only unitary Gaussian ops are lowered.
-    // Measurements and channels MUST be handled in runAndMeasure.
+    // Measurements / channels / injections MUST be handled in runAndMeasure.
 
     private static func lower(_ gate: Gate, modes: Int) throws -> CVGate {
         switch gate {
-
-        case .injectNonGaussian:
-            throw SimulatorError.unsupportedGate(gate)
 
         case .phase(let theta, let mode):
             return CVGate.phaseShift(theta: theta, mode: mode, modes: modes)
@@ -140,8 +155,39 @@ public enum Simulator {
         case .loss, .thermalLoss:
             throw SimulatorError.invalidLowering("Noise channel must not be lowered")
 
+        case .injectNonGaussian:
+            throw SimulatorError.invalidLowering("Non-Gaussian injection must be handled at runtime")
+
         case .noisePlaceholder:
             throw SimulatorError.unsupportedGate(gate)
+        }
+    }
+
+    // MARK: - Injection handler (runtime only)
+
+    private static func applyNonGaussianInjection(
+        _ state: inout GaussianState,
+        _ ng: NonGaussianState,
+        circuitModes: Int
+    ) throws {
+        switch ng {
+
+        case .gkp(let delta, let mode):
+            // Option: Effective-GKP approximation as additive Gaussian noise.
+            // This keeps Gaussian backend usable for “GKP-only” circuits.
+            //
+            // If you want STRICT behavior instead, replace this whole case with:
+            // throw SimulatorError.unsupportedGate(.injectNonGaussian(ng))
+            //
+            guard (0..<circuitModes).contains(mode) else {
+                throw SimulatorError.invalidLowering("GKP injection mode \(mode) out of range")
+            }
+            let v = delta * delta
+            state = try GaussianAdditiveNoise.apply(state, mode: mode, vq: v, vp: v)
+
+        case .fock, .cat:
+            // Needs a true non-Gaussian (Fock) backend
+            throw SimulatorError.unsupportedGate(.injectNonGaussian(ng))
         }
     }
 }
