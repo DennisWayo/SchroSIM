@@ -72,8 +72,8 @@ SchroSIM is currently under active development. If you want to contribute now:
 - Then: **docs/quickstart.md**
 - Examples roadmap: **docs/examples.md**
 
-## Roadmap (MVP-first)
+## Roadmap
 
-See **ROADMAP.md** for milestones and deliverables.
+See ROADMAP.md for milestones and deliverables.
 
 ## Repository Structure
