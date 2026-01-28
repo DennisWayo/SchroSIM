@@ -6,12 +6,6 @@
   <img src="https://img.shields.io/badge/macOS-Apple%20Silicon-black?logo=apple&logoColor=white" />
   <img src="https://img.shields.io/badge/Metal-GPU-black?logo=apple&logoColor=white" />
   <img src="https://img.shields.io/badge/License-MIT-black" />
-  <a href="https://github.com/DennisWayo">
-    <img src="https://img.shields.io/github/followers/DennisWayo?label=Followers&style=social" />
-  </a>
-  <a href="https://github.com/DennisWayo">
-    <img src="https://img.shields.io/github/stars/DennisWayo?label=Stars&style=social" />
-  </a>
 </p>
 
 # SchroSIM
