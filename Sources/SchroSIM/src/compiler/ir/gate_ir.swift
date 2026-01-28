@@ -16,6 +16,7 @@ public enum Gate: Sendable, Equatable {
     case noisePlaceholder(label: String)
     case loss(eta: Double, mode: Int)   // pure-loss channel with transmissivity eta in [0,1]
     case thermalLoss(eta: Double, nTh: Double, mode: Int) // nTh >= 0, eta in [0,1]
+    case injectNonGaussian(NonGaussianState)
 
     // Measurements
     case measureHomodyne(mode: Int, theta: Double)   // measures x_theta = q cosθ + p sinθ

@@ -16,6 +16,12 @@ public final class Circuit: @unchecked Sendable {
 
     // MARK: - Append / DSL
 
+
+    @discardableResult
+    public func injectNonGaussian(_ state: NonGaussianState) -> Self {
+        try? append(.injectNonGaussian(state))
+        return self
+    }
     public func append(_ gate: Gate) throws {
         try validate(gate)
         gates.append(gate)
@@ -80,6 +86,9 @@ public final class Circuit: @unchecked Sendable {
         }
 
         switch gate {
+        case .injectNonGaussian:
+            // Non-Gaussian injection is validated at runtime by backend
+            break
 
         case .phase(_, let mode):
             try checkMode(mode)
