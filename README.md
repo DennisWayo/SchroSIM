@@ -86,11 +86,144 @@ See **ROADMAP.md** for milestones and deliverables.
 
 ```bash
 SchroSIM/
-├── docs/              # Documentation (architecture, quickstart, design notes)
-├── src/               # Swift source files (engine, compiler, UI)
-├── examples/          # Example circuits / educational notebooks (as markdown first)
-├── tests/             # Unit tests + reproducibility checks
+├── README.md
 ├── LICENSE
 ├── CITATION.cff
-├── README.md
-└── CONTRIBUTING.md
+├── CONTRIBUTING.md
+├── CODE_OF_CONDUCT.md
+├── FUNDING.md
+│
+├── docs/
+│   ├── concept/
+│   │   ├── SchroSIM_ConceptNote.pdf
+│   │   ├── architecture_overview.md
+│   │   └── design_principles.md
+│   │
+│   ├── tutorials/
+│   │   ├── cv_basics.md
+│   │   ├── gaussian_vs_nongaussian.md
+│   │   ├── phase_space_visualization.md
+│   │   └── hardware_abstraction.md
+│   │
+│   ├── api/
+│   │   ├── simulator_api.md
+│   │   ├── compiler_api.md
+│   │   └── backend_api.md
+│   │
+│   └── benchmarks/
+│       ├── gbs.md
+│       ├── cluster_states.md
+│       └── loss_and_noise_models.md
+│
+├── src/
+│   ├── core/
+│   │   ├── state/
+│   │   │   ├── gaussian_state.swift
+│   │   │   ├── fock_state.swift
+│   │   │   └── tensor_state.swift
+│   │   │
+│   │   ├── operators/
+│   │   │   ├── cv_gates.swift
+│   │   │   ├── nongaussian_gates.swift
+│   │   │   └── measurement.swift
+│   │   │
+│   │   └── evolution/
+│   │       ├── symplectic_evolution.swift
+│   │       ├── density_matrix.swift
+│   │       └── noise_models.swift
+│   │
+│   ├── compiler/
+│   │   ├── ir/
+│   │   │   ├── circuit_ir.swift
+│   │   │   ├── gate_ir.swift
+│   │   │   └── device_ir.swift
+│   │   │
+│   │   ├── parser/
+│   │   │   ├── circuit_parser.swift
+│   │   │   └── validation.swift
+│   │   │
+│   │   └── passes/
+│   │       ├── optimization.swift
+│   │       ├── decomposition.swift
+│   │       └── scheduling.swift
+│   │
+│   ├── backends/
+│   │   ├── cpu/
+│   │   │   ├── linear_algebra.swift
+│   │   │   └── reference_backend.swift
+│   │   │
+│   │   ├── metal/
+│   │   │   ├── metal_kernels.metal
+│   │   │   ├── gpu_dispatch.swift
+│   │   │   └── memory_management.swift
+│   │   │
+│   │   └── experimental/
+│   │       ├── distributed.swift
+│   │       └── hybrid_cpu_gpu.swift
+│   │
+│   ├── hal/
+│   │   ├── device_model.swift
+│   │   ├── photonic_components.swift
+│   │   └── constraints.swift
+│   │
+│   ├── visualization/
+│   │   ├── wigner.swift
+│   │   ├── quadratures.swift
+│   │   └── circuit_diagrams.swift
+│   │
+│   └── ui/
+│       ├── app.swift
+│       ├── circuit_builder.swift
+│       ├── inspectors.swift
+│       └── plotting_views.swift
+│
+├── examples/
+│   ├── cv/
+│   │   ├── squeezing.swift
+│   │   ├── beamsplitter.swift
+│   │   └── loss_channel.swift
+│   │
+│   ├── nongaussian/
+│   │   ├── gkp_states.swift
+│   │   ├── photon_addition.swift
+│   │   └── measurement_induced.swift
+│   │
+│   └── hybrid/
+│       ├── cv_qml.swift
+│       └── architecture_study.swift
+│
+├── tests/
+│   ├── unit/
+│   │   ├── state_tests.swift
+│   │   ├── operator_tests.swift
+│   │   └── compiler_tests.swift
+│   │
+│   ├── integration/
+│   │   ├── backend_consistency.swift
+│   │   └── noise_validation.swift
+│   │
+│   └── performance/
+│       ├── cpu_vs_gpu.swift
+│       └── scaling_tests.swift
+│
+├── scripts/
+│   ├── benchmarks/
+│   │   ├── run_benchmarks.swift
+│   │   └── collect_metrics.py
+│   │
+│   └── ci/
+│       ├── lint.sh
+│       └── test.sh
+│
+├── data/
+│   ├── reference_states/
+│   ├── validation_cases/
+│   └── benchmark_results/
+│
+└── .github/
+    ├── workflows/
+    │   ├── ci.yml
+    │   └── docs.yml
+    │
+    ├── ISSUE_TEMPLATE/
+    └── PULL_REQUEST_TEMPLATE.md
