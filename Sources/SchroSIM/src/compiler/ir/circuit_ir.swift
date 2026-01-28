@@ -37,6 +37,10 @@ public final class Circuit: @unchecked Sendable {
         try? append(.displace(q: q, p: p, mode: mode))
     }
 
+    public func inject(_ state: NonGaussianState) {
+        try? append(.injectNonGaussian(state))
+    }
+
     // --- Channels / noise (Gaussian) ---
 
     public func loss(eta: Double, on mode: Int) {
@@ -80,7 +84,10 @@ public final class Circuit: @unchecked Sendable {
         }
 
         switch gate {
-
+        case .injectNonGaussian:
+            // Non-Gaussian injection is validated at runtime by backend
+            break
+            
         case .phase(_, let mode):
             try checkMode(mode)
 

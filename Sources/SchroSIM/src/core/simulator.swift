@@ -113,6 +113,9 @@ public enum Simulator {
     private static func lower(_ gate: Gate, modes: Int) throws -> CVGate {
         switch gate {
 
+        case .injectNonGaussian:
+            throw SimulatorError.unsupportedGate(gate)
+
         case .phase(let theta, let mode):
             return CVGate.phaseShift(theta: theta, mode: mode, modes: modes)
 
