@@ -1,4 +1,4 @@
-
+<p align="center">
   <a href="https://github.com/DennisWayo/SchroSIM">
     <img src="https://img.shields.io/badge/Swift-black?logo=swift&logoColor=white&style=flat-square" alt="Swift">
   </a>
@@ -6,10 +6,10 @@
     <img src="https://img.shields.io/badge/Metal-black?logo=apple&logoColor=white&style=flat-square" alt="Metal">
   </a>
   <a href="https://github.com/DennisWayo/SchroSIM">
-    <img src="https://img.shields.io/badge/macOS_Apple_Silicon-black?logo=apple&logoColor=white&style=flat-square" alt="macOS Apple Silicon">
+    <img src="https://img.shields.io/badge/macOS%20Apple%20Silicon-black?logo=apple&logoColor=white&style=flat-square" alt="macOS Apple Silicon">
   </a>
   <a href="https://github.com/DennisWayo/SchroSIM/blob/main/LICENSE">
-    <img src="https://img.shields.io/badge/MIT_License-black?style=flat-square" alt="MIT License">
+    <img src="https://img.shields.io/badge/License-MIT-black?style=flat-square" alt="MIT License">
   </a>
   <a href="https://github.com/DennisWayo/SchroSIM/stargazers">
     <img src="https://img.shields.io/github/stars/DennisWayo/SchroSIM?style=flat-square&color=black" alt="Stars">
@@ -17,86 +17,96 @@
   <a href="https://github.com/DennisWayo/SchroSIM/network/members">
     <img src="https://img.shields.io/github/forks/DennisWayo/SchroSIM?style=flat-square&color=black" alt="Forks">
   </a>
-
+</p>
 
 # SchroSIM
 
-**SchroSIM** is a Schrödinger-inspired, scalable, and hardware-agnostic simulator for quantum photonic circuits. Built in Swift and optimized for Apple’s Metal framework, SchroSIM supports both continuous-variable (CV) and non-Gaussian quantum operations, offering a modular architecture suitable for education, research, and photonic hardware prototyping.
+**SchroSIM** is an **architecture-level, physics-aware simulator** for **exploring, validating, and mapping photonic quantum circuits** under realistic constraints (loss, finite squeezing, non-Gaussian resources).
 
+It targets the “missing middle layer” between:
+- **high-level algorithmic abstractions** (e.g., PennyLane), and
+- **state-level continuous-variable simulation** (e.g., Strawberry Fields).
 
-### Project Highlights
-
-- **Language**: Swift + SwiftUI + Metal
-- **Simulator Types**: Gaussian (symplectic formalism) and Non-Gaussian (Fock/tensor-based)
-- **Platform Support**: macOS (M1/M2), future WebGPU-ready
-- **GUI**: Drag-and-drop photonic circuit builder
-- **Compiler**: Intermediate Representation (IR) for hardware-agnostic mapping
-- **Backends**: CPU/GPU/QPU accelerated simulation
-
-
-
-### Concept Note
-This repository accompanies the technical concept note:
-
-**Dennis Wayo**,
-
-"SchroSIM: A Schrödinger-Inspired Scalable Quantum Photonic Circuit Simulator for Hardware-Agnostic Quantum Computing,"
-
- [TechRxiv Link]([https://arxiv.org/abs/2025.xxxxx](https://www.techrxiv.org/users/924890/articles/1304432-schrosim-a-schr%C3%B6dinger-inspired-scalable-quantum-photonic-circuit-simulator-for-hardware-agnostic-quantum-computing))  
- [PDF Download](docs/SchroSIM_ConceptNote.pdf)
+SchroSIM is designed to help researchers and educators reason about **how abstract photonic programs map onto physical device layers** and architectural trade-offs.
 
 ---
 
-### Project Structure (WIP)
+## Why SchroSIM?
+
+Photonic quantum tooling often forces a choice:
+
+1. **Algorithm-first** frameworks that hide device physics (great for QML and prototyping, weaker for architectural reasoning), or  
+2. **Physics-first** simulators that are powerful but heavy for rapid architecture exploration.
+
+**SchroSIM bridges the gap** with a lightweight, modular approach for:
+
+- **Architecture exploration:** phase boundaries for loss/squeezing/non-Gaussian resources  
+- **Hardware-aware mapping:** logical → device → physical interpretation layers  
+- **Education:** intuitive visualizations (phase space, quadratures, Wigner functions)  
+- **Rapid “what-if” studies:** design rules without full wavefunction simulation
+
+---
+
+## What SchroSIM is (and is not)
+
+✅ **SchroSIM is:**
+- an **architecture reasoning tool** for photonic quantum circuits
+- a platform for **hardware-aware circuit exploration**
+- a modular simulator with **Gaussian + non-Gaussian** pathways
+
+❌ **SchroSIM is not intended to replace:**
+- **PennyLane** (algorithmic abstraction + QML workflows)
+- **Strawberry Fields** (full CV state simulation engine)
+
+Instead, SchroSIM aims to **complement** these projects by focusing on the architecture layer and integration boundaries.
+
+---
+
+## Project Highlights
+
+- **Language:** Swift + SwiftUI + Metal
+- **Simulation Modes:**  
+  - *Gaussian* (symplectic / covariance formalism)  
+  - *Non-Gaussian* (Fock/tensor-based modules; staged roadmap)
+- **Platform:** macOS (Apple Silicon), with future portability goals
+- **GUI (planned):** drag-and-drop photonic circuit builder
+- **Compiler Layer (planned):** intermediate representation (IR) for hardware-agnostic mapping
+- **Backends (roadmap):** CPU + GPU acceleration; optional integration with external QPU workflows
+
+---
+
+## Concept Note / Preprint
+
+- **TechRxiv:** https://www.techrxiv.org/users/924890/articles/1304432-schrosim-a-schr%C3%B6dinger-inspired-scalable-quantum-photonic-circuit-simulator-for-hardware-agnostic-quantum-computing  
+- Local copy (optional): `docs/SchroSIM_ConceptNote.pdf`
+
+---
+
+## Quickstart (documentation-first MVP)
+
+SchroSIM is currently under active development. If you want to contribute now:
+
+- Start here: **docs/architecture.md**
+- Then: **docs/quickstart.md**
+- Examples roadmap: **docs/examples.md**
+
+---
+
+## Roadmap (MVP-first)
+
+See **ROADMAP.md** for milestones and deliverables.
+
+---
+
+## Repository Structure
 
 ```bash
-schrosim/
-├── docs/              # Technical documentation and preprints
-├── src/               # Swift source files
-│   ├── simulator/     # Simulation engine (CV, Fock, tensor)
-│   ├── compiler/      # IR and circuit parsing
-│   └── ui/            # SwiftUI GUI modules
-├── examples/          # Test circuits and use-cases
-├── tests/             # Benchmarking and unit tests
+SchroSIM/
+├── docs/              # Documentation (architecture, quickstart, design notes)
+├── src/               # Swift source files (engine, compiler, UI)
+├── examples/          # Example circuits / educational notebooks (as markdown first)
+├── tests/             # Unit tests + reproducibility checks
 ├── LICENSE
+├── CITATION.cff
 ├── README.md
 └── CONTRIBUTING.md
-```
-
-
-### Roadmap
-
-| Version | Features |
-|---------|----------|
-| **v0.1** | SwiftUI GUI, basic CV gates, IR compiler stub |
-| **v0.2** | Full CV + non-Gaussian backend, Metal acceleration |
-| **v0.3** | HAL, benchmarking tasks (GBS, cluster states) |
-| **v1.0** | Release candidate, reproducibility scripts, documentation |
-
-
-### Contributing
-We welcome contributors from the quantum, photonic, and Swift communities. To get started:
-
-1. Fork the repository
-2. Create a new branch: `git checkout -b feature-name`
-3. Submit a pull request with a clear description
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for style guides and module naming conventions.
-
-
-###  Contact
-**Dennis Wayo**  
-Quantum Computing Researcher and Software Developer, SchroSIM Project  
-🔗 [GitHub](https://github.com/DennisWayo/SchroSIM)
-
-
-###  License
-MIT License. See [LICENSE](LICENSE) for details.
-
----
-
-> This repository serves as the implementation base for the SchroSIM technical concept note and will track its open-source development from concept to release.
-
-### Funders
-This project will acknowledge support from funding organizations upon award.  
-A dedicated section will be updated here to credit any sponsors who contribute to SchroSIM.
