@@ -13,8 +13,8 @@
 **SchroSIM** is an **architecture-level, physics-aware simulator** for **exploring, validating, and mapping photonic quantum circuits** under realistic constraints (loss, finite squeezing, non-Gaussian resources).
 
 It targets the “missing middle layer” between:
-- **high-level algorithmic abstractions** (e.g., PennyLane), and
-- **state-level continuous-variable simulation** (e.g., Strawberry Fields).
+- **high-level algorithmic abstractions** (PennyLane), and
+- **state-level continuous-variable simulation** (Strawberry Fields).
 
 SchroSIM is designed to help researchers and educators reason about how abstract photonic programs map onto physical device layers and architectural trade-offs.
 
