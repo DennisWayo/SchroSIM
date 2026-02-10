@@ -64,7 +64,7 @@ Instead, SchroSIM aims to **complement** these projects by focusing on the archi
 - **TechRxiv:** https://www.techrxiv.org/users/924890/articles/1304432-schrosim-a-schr%C3%B6dinger-inspired-scalable-quantum-photonic-circuit-simulator-for-hardware-agnostic-quantum-computing  
 - Local copy (optional): `docs/SchroSIM_ConceptNote.pdf`
 
-## Quickstart (documentation-first MVP)
+## Quickstart (documentation-first)
 
 SchroSIM is currently under active development. If you want to contribute now:
 
