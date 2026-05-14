@@ -26,6 +26,15 @@ Full project documentation is in [SchroSIM Docs](https://denniswayo.github.io/Sc
 Enterprise-only capabilities (advanced UI, partner-specific integrations, and commercialization-focused IP) are developed in enterprise mode and are intended to live in a separate private distribution path.
 This boundary keeps reproducible scientific workflows public while allowing confidential enterprise delivery for hardware and industrial partners."
 
+![SchroSIM Enterprise UI Preview](docs/ui-mockups/schrosim-enterprise-preview.gif)
+
+The enterprise UI is focused on:
+1. project-scoped circuit workflows,
+2. backend-aware execution policies,
+3. analysis views for simulation and QEC outcomes.
+
+Status: enterprise-track active development.
+
 ### The Need
 Photonic and CV workflows need fast iteration across modeling, backend selection, and error-correction validation. In practice, teams often lose time moving between disconnected tools for design, compilation, execution, and debugging.
 
@@ -116,12 +125,3 @@ schrosim run examples/cv/qec_single_logical_gkp_memory_mvp.json --backend hybrid
 ### Optional: Run from CLion
 CLion is recommended for contributor workflows (debugging, stepping through code, and managing run configurations). Keep CLI commands as the primary execution path for reproducible runs and CI alignment.
 
-### Enterprise UI Preview
-![SchroSIM Enterprise UI Preview](docs/ui-mockups/schrosim-enterprise-preview.gif)
-
-The enterprise UI is focused on:
-1. project-scoped circuit workflows,
-2. backend-aware execution policies,
-3. analysis views for simulation and QEC outcomes.
-
-Status: enterprise-track active development.
