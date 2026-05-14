@@ -353,9 +353,3 @@ Approximation enters when:
 3. optional effective models are used for workflow practicality.
 
 This aligns with the taxonomy in [10-theory-and-exactness-scope.md](10-theory-and-exactness-scope.md): model-exact Gaussian core plus controlled approximation regimes outside that boundary.
-
-## 10) Next Proof Tasks
-
-1. Add explicit physicality-preservation argument under complete Gaussian channels.
-2. Add formal truncation-vs-cutoff convergence discussion for displacement on bounded-energy states.
-3. Add theorem-style tests mapping each equation to deterministic unit tests.
