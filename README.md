@@ -15,12 +15,19 @@
 
 # SchroSIM
 
-SchroSIM is a continuous-variable (CV) photonic quantum simulation stack for designing, compiling, and simulating hardware-like photonic quantum circuits. It combines a core SDK for developer integration, a CLI for terminal-based circuit execution, and an intelligent IDE for visual circuit design, runtime control, and analysis.
+SchroSIM is a continuous-variable (CV) photonic quantum simulation stack for designing, compiling, and simulating hardware-like photonic quantum circuits. The open-source core combines an SDK for developer integration and a CLI for terminal-based circuit execution.
 
 Built for students, researchers, and quantum foundry engineers, SchroSIM provides an exact-solution simulation path for tractable circuits and scalable backend options for larger workflows.
 
 ## Documentation
 Full project documentation is in [docs/README.md](docs/README.md).
+
+## Open-Source Core and Enterprise Scope
+SchroSIM core (compiler, runtime, SDK/CLI, docs, and public examples) is open source under MIT for research, education, and downstream studies.
+
+Enterprise-only capabilities (advanced UI, partner-specific integrations, and commercialization-focused IP) are developed in enterprise mode and are intended to live in a separate private distribution path.
+
+This boundary keeps reproducible scientific workflows public while allowing confidential enterprise delivery for hardware and industrial partners.
 
 ## The Need
 Photonic and CV workflows need fast iteration across modeling, backend selection, and error-correction validation. In practice, teams often lose time moving between disconnected tools for design, compilation, execution, and debugging.
@@ -46,7 +53,7 @@ Use this rule of thumb:
 2. use scalable/hybrid/Fock policy-targeted paths as controlled approximations for larger experiments and pre-hardware iteration.
 
 ## Design-to-Result Workflow
-1. design a circuit in the IDE or define it in project JSON,
+1. define a circuit in project JSON (public workflow) or design it in the enterprise UI (private track),
 2. compile to backend-aware intermediate/runtime configuration,
 3. run static checks for operation support and constraint compatibility,
 4. execute simulation on selected path (model-exact Gaussian or controlled approximation backend path),
@@ -112,12 +119,12 @@ schrosim run examples/cv/qec_single_logical_gkp_memory_mvp.json --backend hybrid
 ## Optional: Run from CLion
 CLion is recommended for contributor workflows (debugging, stepping through code, and managing run configurations). Keep CLI commands as the primary execution path for reproducible runs and CI alignment.
 
-## IDE: SchroSIM Intelligent Platform
-![SchroSIM Intelligent Platform](docs/ui-mockups/schrosim-intelligent-platform.png)
+## Enterprise UI Preview
+![SchroSIM Enterprise UI Preview](docs/ui-mockups/schrosim-enterprise-preview.gif)
 
-The IDE is focused on:
+The enterprise UI is focused on:
 1. project-scoped circuit workflows,
 2. backend-aware execution policies,
 3. analysis views for simulation and QEC outcomes.
 
-Status: active development.
+Status: enterprise-track active development.
