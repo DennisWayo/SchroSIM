@@ -31,9 +31,9 @@ See detailed guide:
 
 ## Contribution and Security Policies
 
-- [../CONTRIBUTING.md](../CONTRIBUTING.md)
-- [../CODE_OF_CONDUCT.md](../CODE_OF_CONDUCT.md)
-- [../SECURITY.md](../SECURITY.md)
+- [CONTRIBUTING.md](https://github.com/DennisWayo/SchroSIM/blob/master/CONTRIBUTING.md)
+- [CODE_OF_CONDUCT.md](https://github.com/DennisWayo/SchroSIM/blob/master/CODE_OF_CONDUCT.md)
+- [SECURITY.md](https://github.com/DennisWayo/SchroSIM/blob/master/SECURITY.md)
 
 ## Public Release Process (Current)
 

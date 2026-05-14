@@ -1,0 +1,35 @@
+site_name: SchroSIM
+site_description: Continuous-variable photonic quantum simulation stack
+site_url: https://denniswayo.github.io/SchroSIM/
+
+docs_dir: docs
+exclude_docs: README.md
+
+repo_url: https://github.com/DennisWayo/SchroSIM
+repo_name: DennisWayo/SchroSIM
+edit_uri: edit/master/docs/
+
+theme:
+  name: readthedocs
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Quick Start: 02-quickstart.md
+      - CLI Reference: 07-cli-reference.md
+  - Core Capabilities:
+      - Overview: 01-overview.md
+      - Architecture: 03-architecture.md
+      - Circuit IR and Schema: 04-circuit-ir-and-schema.md
+      - Compiler and Foundry Layer: 05-compiler-and-foundry.md
+      - Execution Backends: 06-execution-backends.md
+  - Reliability and Operations:
+      - Tracing, Observability, and Reproducibility: 08-tracing-observability-reproducibility.md
+      - Validation and Benchmarks: 09-validation-and-benchmarks.md
+      - Debugging Playbook: DEBUGGING.md
+  - Theory:
+      - Exactness Scope: 10-theory-and-exactness-scope.md
+      - Mathematical Proofs: 11-mathematical-proofs.md
+  - Developer:
+      - Worked Examples: 12-worked-examples.md
+      - Developer Guide: 13-developer-guide.md
