@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "schrosim"
-version = "0.10.0"
+version = "0.10.1"
 description = "Python launcher and helper package for the SchroSIM CV photonic simulator CLI."
 readme = "README.md"
 requires-python = ">=3.9"
@@ -53,13 +53,18 @@ include = [
   "/LICENSE",
 ]
 
+[tool.hatch.build.hooks.custom]
+path = "hatch_build.py"
+
 [tool.hatch.build.targets.wheel]
 packages = ["src/schrosim"]
+artifacts = ["/src/schrosim/_bin/schrosim-cli"]
 
 [tool.hatch.build.targets.sdist]
 only-include = [
   "src/schrosim",
   "README.md",
   "LICENSE",
+  "hatch_build.py",
   "pyproject.toml",
 ]

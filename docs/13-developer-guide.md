@@ -62,10 +62,13 @@ When CI/release automation is introduced, this section should be replaced by the
 
 - Python package metadata lives in `pyproject.toml`.
 - Package source is in `src/schrosim/`.
-- Build locally:
+- Local build checks:
   - `python3 -m pip install --upgrade build twine`
-  - `python3 -m build`
+  - `python3 -m build --sdist`
   - `python3 -m twine check dist/*`
 - Publish via GitHub Actions:
   - workflow: `.github/workflows/pypi-publish.yml`
   - run manually with `repository=testpypi` first, then `repository=pypi`.
+  - workflow builds:
+    - one source distribution (`sdist`),
+    - macOS wheels (`macos-13` + `macos-14`) with bundled `schrosim-cli` backend.

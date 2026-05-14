@@ -7,6 +7,7 @@ __pycache__/
 *.py[cod]
 /site/
 /Packages
+/src/schrosim/_bin/schrosim-cli
 xcuserdata/
 DerivedData/
 .swiftpm/configuration/registries.json

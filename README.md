@@ -104,7 +104,8 @@ schrosim --help
 ```
 
 The Python package provides the `schrosim` launcher and helper entry points.
-When run inside a source checkout (with Swift installed), it delegates to `schrosim-cli`.
+On macOS, published wheels include a native `schrosim-cli` backend, so `pip install schrosim` is runnable directly.
+On other platforms, install/build `schrosim-cli` yourself or run from source with Swift.
 
 For this source repository:
 ```bash
