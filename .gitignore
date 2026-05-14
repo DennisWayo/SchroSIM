@@ -32,4 +32,5 @@ last_result.json
 /core-swift/Sources/schrosim-cli/trace_enterprise.swift
 /config/profiles/enterprise-default-v1.json
 /docs/ui-mockups/*enterprise*
+!/docs/ui-mockups/schrosim-enterprise-preview.gif
 /.github/workflows/*enterprise*.yml

@@ -13,28 +13,25 @@
   <img src="https://img.shields.io/badge/Release-Latest-black?logo=github&logoColor=white" />
 </p>
 
-# SchroSIM
+## SchroSIM
 
 SchroSIM is a continuous-variable (CV) photonic quantum simulation stack for designing, compiling, and simulating hardware-like photonic quantum circuits. The open-source core combines an SDK for developer integration and a CLI for terminal-based circuit execution.
 
 Built for students, researchers, and quantum foundry engineers, SchroSIM provides an exact-solution simulation path for tractable circuits and scalable backend options for larger workflows.
 
-## Documentation
+> Documentation: 
 Full project documentation is in [docs/README.md](docs/README.md).
 
-## Open-Source Core and Enterprise Scope
-SchroSIM core (compiler, runtime, SDK/CLI, docs, and public examples) is open source under MIT for research, education, and downstream studies.
-
+> "SchroSIM core (compiler, runtime, SDK/CLI, docs, and public examples) is open source under MIT for research, education, and downstream studies.
 Enterprise-only capabilities (advanced UI, partner-specific integrations, and commercialization-focused IP) are developed in enterprise mode and are intended to live in a separate private distribution path.
+This boundary keeps reproducible scientific workflows public while allowing confidential enterprise delivery for hardware and industrial partners."
 
-This boundary keeps reproducible scientific workflows public while allowing confidential enterprise delivery for hardware and industrial partners.
-
-## The Need
+### The Need
 Photonic and CV workflows need fast iteration across modeling, backend selection, and error-correction validation. In practice, teams often lose time moving between disconnected tools for design, compilation, execution, and debugging.
 
 SchroSIM is built to make those workflows practical in one platform, with reproducible runs and backend-aware execution policies that support both research and pre-hardware validation.
 
-## Circuit and Runtime Failure Modes (Why They Matter)
+### Circuit and Runtime Failure Modes (Why They Matter)
 The failure modes below are workflow-level circuit/runtime issues common in photonic and CV pipelines. They are not, by default, indicators of defects in SchroSIM itself.
 
 Even promising photonic circuit designs can fail at compile time or simulation time. Common failure modes include:
@@ -45,14 +42,14 @@ Even promising photonic circuit designs can fail at compile time or simulation t
 
 SchroSIM helps surface these issues early with backend-aware checks, reproducible runtime configuration, and analysis views that explain where and why execution failed.
 
-## Model-Exact Scope
+### Model-Exact Scope
 SchroSIM provides model-exact simulation for tractable Gaussian CV workloads under the stated model assumptions. For larger, non-Gaussian-heavy, or more hardware-constrained cases, SchroSIM supports backend-aware execution paths that use controlled approximations for scalability and runtime practicality.
 
 Use this rule of thumb:
 1. use the model-exact Gaussian path for ground-truth studies, validation, and small-to-mid scale circuit analysis,
 2. use scalable/hybrid/Fock policy-targeted paths as controlled approximations for larger experiments and pre-hardware iteration.
 
-## Design-to-Result Workflow
+### Design-to-Result Workflow
 1. define a circuit in project JSON (public workflow) or design it in the enterprise UI (private track),
 2. compile to backend-aware intermediate/runtime configuration,
 3. run static checks for operation support and constraint compatibility,
@@ -60,7 +57,7 @@ Use this rule of thumb:
 5. analyze observables, runtime metrics, and QEC outcomes,
 6. iterate parameters, backend, and correction strategy with reproducible settings.
 
-## Failure Diagnostics in SchroSIM
+### Failure Diagnostics in SchroSIM
 | Failure class | Typical symptom | Likely cause | Mitigation |
 |---|---|---|---|
 | Non-physical parameters | compile rejection or invalid state warning | squeezing/phase/state assumptions outside valid region | enforce parameter bounds and validate state configuration before execution |
@@ -69,16 +66,16 @@ Use this rule of thumb:
 | Resource overrun | excessive runtime/memory | circuit scale exceeds selected method limits | switch backend mode, reduce circuit depth/modes, profile bottlenecks |
 | Constraint conflict | schedule/order/timing failure | gate ordering violates foundry/runtime constraints | use compiler ordering hints and backend-specific scheduling policies |
 
-## Hardware-Like and Foundry Constraints
+### Hardware-Like and Foundry Constraints
 SchroSIM is built for pre-hardware realism. Backend-aware compilation and runtime policy checks help teams identify unsupported operations, ordering constraints, and integration risks before tape-out or hardware queue submission.
 
-## Numerical Reliability and Reproducibility
+### Numerical Reliability and Reproducibility
 For technical studies, use fixed seeds, pinned runtime configuration, and explicit cutoff/precision settings. This makes experiments repeatable and simplifies regression checks across backend changes.
 
-## Project Maturity
+### Project Maturity
 SchroSIM is under active development. Core workflows for circuit design, compilation, execution, and analysis are available, with ongoing expansion of backend coverage and diagnostics depth.
 
-## Toolchain Prerequisites
+### Toolchain Prerequisites
 SchroSIM source workflows require Python, Swift, and Rust toolchains.
 
 Verify your environment:
@@ -90,7 +87,7 @@ rustc --version
 cargo --version
 ```
 
-## Quick Start
+### Quick Start
 For the published Python package:
 ```bash
 pip install schrosim
@@ -105,7 +102,7 @@ swift run schrosim-cli --help
 
 Python 3 is required for helper scripts, but there are currently no third-party Python package requirements.
 
-## CLI: Run Demos
+### CLI: Run Demos
 Run Boson Sampling:
 ```bash
 schrosim run examples/runtime_default_foundry.json --backend hybrid
@@ -116,10 +113,10 @@ Run Quantum Error Correction:
 schrosim run examples/cv/qec_single_logical_gkp_memory_mvp.json --backend hybrid
 ```
 
-## Optional: Run from CLion
+### Optional: Run from CLion
 CLion is recommended for contributor workflows (debugging, stepping through code, and managing run configurations). Keep CLI commands as the primary execution path for reproducible runs and CI alignment.
 
-## Enterprise UI Preview
+### Enterprise UI Preview
 ![SchroSIM Enterprise UI Preview](docs/ui-mockups/schrosim-enterprise-preview.gif)
 
 The enterprise UI is focused on:
