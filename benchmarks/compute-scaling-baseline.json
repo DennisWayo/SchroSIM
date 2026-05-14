@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "suite": "compute_scaling",
+  "backend": "gaussian",
+  "compute_backends": [
+    "auto",
+    "cpu"
+  ],
+  "modes": [
+    2,
+    8
+  ],
+  "layers": [
+    8,
+    24
+  ],
+  "iterations": 2,
+  "cutoff": 20,
+  "seed": 7,
+  "rows": [
+    {
+      "backend": "auto",
+      "modes": 2,
+      "layers": 8,
+      "gate_count": 46,
+      "compute_backend_candidate": "cpu",
+      "compute_backend_used": "cpu",
+      "compute_backend_fallback_reason": null,
+      "latency_ms": {
+        "p95": 4.1302502155303955,
+        "avg": 3.1690001487731934
+      }
+    },
+    {
+      "backend": "auto",
+      "modes": 2,
+      "layers": 24,
+      "gate_count": 137,
+      "compute_backend_candidate": "cpu",
+      "compute_backend_used": "cpu",
+      "compute_backend_fallback_reason": null,
+      "latency_ms": {
+        "p95": 6.491678953170776,
+        "avg": 6.318032741546631
+      }
+    },
+    {
+      "backend": "auto",
+      "modes": 8,
+      "layers": 8,
+      "gate_count": 206,
+      "compute_backend_candidate": "metal",
+      "compute_backend_used": "cpu",
+      "compute_backend_fallback_reason": "metal_path_not_implemented_phase1",
+      "latency_ms": {
+        "p95": 342.00717210769653,
+        "avg": 331.8384885787964
+      }
+    },
+    {
+      "backend": "auto",
+      "modes": 8,
+      "layers": 24,
+      "gate_count": 617,
+      "compute_backend_candidate": "metal",
+      "compute_backend_used": "cpu",
+      "compute_backend_fallback_reason": "metal_path_not_implemented_phase1",
+      "latency_ms": {
+        "p95": 1018.7114655971527,
+        "avg": 999.9780058860779
+      }
+    },
+    {
+      "backend": "cpu",
+      "modes": 2,
+      "layers": 8,
+      "gate_count": 46,
+      "compute_backend_candidate": "cpu",
+      "compute_backend_used": "cpu",
+      "compute_backend_fallback_reason": null,
+      "latency_ms": {
+        "p95": 2.3428916931152344,
+        "avg": 2.3059844970703125
+      }
+    },
+    {
+      "backend": "cpu",
+      "modes": 2,
+      "layers": 24,
+      "gate_count": 137,
+      "compute_backend_candidate": "cpu",
+      "compute_backend_used": "cpu",
+      "compute_backend_fallback_reason": null,
+      "latency_ms": {
+        "p95": 6.581377983093262,
+        "avg": 6.521940231323242
+      }
+    },
+    {
+      "backend": "cpu",
+      "modes": 8,
+      "layers": 8,
+      "gate_count": 206,
+      "compute_backend_candidate": "cpu",
+      "compute_backend_used": "cpu",
+      "compute_backend_fallback_reason": null,
+      "latency_ms": {
+        "p95": 339.6298885345459,
+        "avg": 333.5444927215576
+      }
+    },
+    {
+      "backend": "cpu",
+      "modes": 8,
+      "layers": 24,
+      "gate_count": 617,
+      "compute_backend_candidate": "cpu",
+      "compute_backend_used": "cpu",
+      "compute_backend_fallback_reason": null,
+      "latency_ms": {
+        "p95": 990.218460559845,
+        "avg": 973.0689525604248
+      }
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "policies": [
+    {
+      "id": "cv_gaussian_production_v1",
+      "name": "CV Gaussian Production",
+      "version": 1,
+      "target_representation": "gaussian_phase_space",
+      "summary": "Production readiness policy for Gaussian CV circuits using deterministic parity plus calibrated-noise robustness thresholds.",
+      "references": [
+        "Internal enterprise qualification standard: CV-GAUSS-PROD-v1"
+      ],
+      "thresholds": {
+        "min_success_rate": 0.95,
+        "max_mean_photon_p95_delta": 0.050,
+        "max_state_p95_delta": 0.020,
+        "max_measurement_mismatch_rate": 0.010,
+        "min_mean_photon_number": 0.0,
+        "max_mean_photon_number": 250.0,
+        "min_squeezing_db": 1.0,
+        "min_gaussian_purity": 0.50
+      }
+    },
+    {
+      "id": "cv_qec_gaussian_v1",
+      "name": "CV QEC Gaussian",
+      "version": 1,
+      "target_representation": "gaussian_phase_space",
+      "summary": "QEC qualification policy for Gaussian/Hybrid backends using logical error rate, suppression factor against physical shift noise, and break-even gain.",
+      "references": [
+        "Internal enterprise qualification standard: CV-QEC-GAUSS-v1"
+      ],
+      "thresholds": {
+        "min_success_rate": 0.90,
+        "max_mean_photon_p95_delta": 0.120,
+        "max_state_p95_delta": 0.080,
+        "max_measurement_mismatch_rate": 0.050,
+        "min_mean_photon_number": 0.0,
+        "max_mean_photon_number": 400.0,
+        "max_logical_error_rate": 0.34,
+        "min_suppression_factor": 1.0,
+        "min_break_even_gain": 0.0
+      }
+    },
+    {
+      "id": "cv_fock_validation_v1",
+      "name": "CV Fock Validation",
+      "version": 1,
+      "target_representation": "fock_number_basis",
+      "summary": "Validation policy for Fock-basis runs emphasizing normalization fidelity and robust runtime consistency.",
+      "references": [
+        "Internal enterprise qualification standard: CV-FOCK-VAL-v1"
+      ],
+      "thresholds": {
+        "min_success_rate": 0.95,
+        "max_mean_photon_p95_delta": 0.080,
+        "max_state_p95_delta": 0.030,
+        "max_measurement_mismatch_rate": 0.010,
+        "min_mean_photon_number": 0.0,
+        "max_mean_photon_number": 200.0,
+        "max_fock_normalization_error": 0.000001
+      }
+    }
+  ]
+}

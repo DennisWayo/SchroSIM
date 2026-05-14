@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "seed": 2026,
+  "modes": 1,
+  "backend": "gaussian",
+  "foundry": {
+    "name": "seeded-homodyne-demo",
+    "max_modes": 4,
+    "max_squeezing_r": 1.2,
+    "allow_non_gaussian": true,
+    "allow_measurements": true,
+    "inject_mode_loss": false,
+    "mode_loss_eta": [1.0]
+  },
+  "gates": [
+    { "type": "displace", "q": 0.2, "p": 0.0, "mode": 0 },
+    { "type": "measure_homodyne", "theta": 0.0, "mode": 0 }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "seed": 12345,
+  "modes": 2,
+  "backend": "auto",
+  "cutoff": 20,
+  "foundry": {
+    "name": "demo_foundry_v1",
+    "max_modes": 4,
+    "max_squeezing_r": 1.2,
+    "allow_non_gaussian": true,
+    "allow_measurements": true,
+    "inject_mode_loss": true,
+    "mode_loss_eta": [0.93, 0.88]
+  },
+  "gates": [
+    { "type": "squeeze", "r": 0.7, "mode": 0 },
+    { "type": "phase", "theta": 0.4, "mode": 0 },
+    { "type": "beam_splitter", "theta": 0.7853981634, "mode_a": 0, "mode_b": 1 },
+    { "type": "displace", "q": 0.3, "p": -0.1, "mode": 1 }
+  ]
+}
