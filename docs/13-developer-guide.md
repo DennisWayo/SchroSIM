@@ -71,4 +71,4 @@ When CI/release automation is introduced, this section should be replaced by the
   - run manually with `repository=testpypi` first, then `repository=pypi`.
   - workflow builds:
     - one source distribution (`sdist`),
-    - macOS wheels (`macos-13` + `macos-14`) with bundled `schrosim-cli` backend.
+    - macOS wheels (`macos-15-intel` + `macos-14`) with bundled `schrosim-cli` backend.
