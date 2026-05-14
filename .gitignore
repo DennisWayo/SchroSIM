@@ -22,7 +22,7 @@ last_result.json
 
 # Enterprise/private GUI boundary (public repo guardrails)
 /enterprise/*
-!/enterprise/README.md
+
 
 # Legacy path guardrails (before consolidation into /enterprise)
 /Sources/schrosim-gui/
