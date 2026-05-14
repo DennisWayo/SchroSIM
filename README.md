@@ -20,7 +20,7 @@ SchroSIM is a continuous-variable (CV) photonic quantum simulation stack for des
 Built for students, researchers, and quantum foundry engineers, SchroSIM provides an exact-solution simulation path for tractable circuits and scalable backend options for larger workflows.
 
 > Documentation: 
-Full project documentation is in [docs/README.md](docs/README.md).
+Full project documentation is in [SchroSIM Docs](https://denniswayo.github.io/SchroSIM/).
 
 > "SchroSIM core (compiler, runtime, SDK/CLI, docs, and public examples) is open source under MIT for research, education, and downstream studies.
 Enterprise-only capabilities (advanced UI, partner-specific integrations, and commercialization-focused IP) are developed in enterprise mode and are intended to live in a separate private distribution path.
