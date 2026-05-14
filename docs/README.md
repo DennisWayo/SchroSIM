@@ -24,7 +24,7 @@ This directory is the working documentation set for SchroSIM.
 - Enterprise-only material is kept under `enterprise/`.
 - Existing debug playbook: [DEBUGGING.md](DEBUGGING.md).
 
-## Suggested Writing Order
+## Suggested Reading Order
 
 1. `01` to `07` for product and API clarity.
 2. `08` and `09` for operational confidence.
