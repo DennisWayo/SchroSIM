@@ -1,5 +1,8 @@
 .DS_Store
 /.build
+/build/
+/dist/
+/*.egg-info/
 /site/
 /Packages
 xcuserdata/

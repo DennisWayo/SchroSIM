@@ -100,16 +100,18 @@ cargo --version
 For the published Python package:
 ```bash
 pip install schrosim
+schrosim --help
 ```
 
-`pip` installs the package dependencies defined by that published distribution.
+The Python package provides the `schrosim` launcher and helper entry points.
+When run inside a source checkout (with Swift installed), it delegates to `schrosim-cli`.
 
 For this source repository:
 ```bash
 swift run schrosim-cli --help
 ```
 
-Python 3 is required for helper scripts, but there are currently no third-party Python package requirements.
+Python 3 is required for helper scripts and packaging workflows.
 
 ### CLI: Run Demos
 Run Boson Sampling:
@@ -124,4 +126,3 @@ schrosim run examples/cv/qec_single_logical_gkp_memory_mvp.json --backend hybrid
 
 ### Optional: Run from CLion
 CLion is recommended for contributor workflows (debugging, stepping through code, and managing run configurations). Keep CLI commands as the primary execution path for reproducible runs and CI alignment.
-

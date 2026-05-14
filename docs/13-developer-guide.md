@@ -57,3 +57,15 @@ Until full automation is added, use this manual flow for public releases:
    - publish release notes summarizing API/CLI changes, validation coverage, and known limitations.
 
 When CI/release automation is introduced, this section should be replaced by the workflow file references and required status checks.
+
+## Python Package Publishing (PyPI)
+
+- Python package metadata lives in `pyproject.toml`.
+- Package source is in `src/schrosim/`.
+- Build locally:
+  - `python3 -m pip install --upgrade build twine`
+  - `python3 -m build`
+  - `python3 -m twine check dist/*`
+- Publish via GitHub Actions:
+  - workflow: `.github/workflows/pypi-publish.yml`
+  - run manually with `repository=testpypi` first, then `repository=pypi`.

@@ -1,0 +1,65 @@
+[build-system]
+requires = ["hatchling>=1.25.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "schrosim"
+version = "0.10.0"
+description = "Python launcher and helper package for the SchroSIM CV photonic simulator CLI."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [
+  { name = "Dennis Wayo" }
+]
+keywords = [
+  "quantum",
+  "photonic",
+  "continuous-variable",
+  "simulation",
+  "cv",
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering :: Physics",
+  "Topic :: Software Development :: Build Tools",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/DennisWayo/SchroSIM"
+Documentation = "https://denniswayo.github.io/SchroSIM/"
+Repository = "https://github.com/DennisWayo/SchroSIM"
+Issues = "https://github.com/DennisWayo/SchroSIM/issues"
+
+[project.scripts]
+schrosim = "schrosim.cli:main"
+
+[tool.hatch.build]
+include = [
+  "/src/schrosim/**",
+  "/README.md",
+  "/LICENSE",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/schrosim"]
+
+[tool.hatch.build.targets.sdist]
+only-include = [
+  "src/schrosim",
+  "README.md",
+  "LICENSE",
+  "pyproject.toml",
+]
