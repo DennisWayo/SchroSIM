@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "seed": 3303,
+  "modes": 1,
+  "backend": "gaussian",
+  "cutoff": 20,
+  "foundry": {
+    "name": "validation-thermal-heterodyne-v1",
+    "max_modes": 2,
+    "max_squeezing_r": 1.2,
+    "allow_non_gaussian": false,
+    "allow_measurements": true,
+    "inject_mode_loss": false,
+    "mode_loss_eta": [1.0]
+  },
+  "gates": [
+    { "type": "displace", "q": 0.12, "p": -0.08, "mode": 0 },
+    { "type": "phase", "theta": 0.4, "mode": 0 },
+    { "type": "thermal_loss", "eta": 0.955, "n_th": 0.12, "mode": 0 },
+    { "type": "measure_heterodyne", "mode": 0 }
+  ]
+}

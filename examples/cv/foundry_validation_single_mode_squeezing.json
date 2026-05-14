@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "seed": 1101,
+  "modes": 1,
+  "backend": "gaussian",
+  "cutoff": 20,
+  "foundry": {
+    "name": "validation-single-mode-squeezing-v1",
+    "max_modes": 2,
+    "max_squeezing_r": 1.2,
+    "allow_non_gaussian": false,
+    "allow_measurements": true,
+    "inject_mode_loss": false,
+    "mode_loss_eta": [1.0]
+  },
+  "gates": [
+    { "type": "squeeze", "r": 0.55, "mode": 0 },
+    { "type": "phase", "theta": 0.21, "mode": 0 },
+    { "type": "displace", "q": 0.18, "p": -0.04, "mode": 0 },
+    { "type": "loss", "eta": 0.992, "mode": 0 },
+    { "type": "measure_homodyne", "theta": 0.0, "mode": 0 }
+  ]
+}

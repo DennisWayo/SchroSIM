@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "seed": 42,
+  "modes": 1,
+  "backend": "auto",
+  "initial_state": "vacuum",
+  "foundry": {
+    "name": "runtime-input-demo",
+    "max_modes": 4,
+    "max_squeezing_r": 1.2,
+    "allow_non_gaussian": true,
+    "allow_measurements": true,
+    "inject_mode_loss": false
+  },
+  "gates": [
+    { "type": "displace", "q": 1.0, "p": 0.0, "mode": 0 }
+  ]
+}

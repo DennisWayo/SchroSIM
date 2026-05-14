@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "seed": 4404,
+  "modes": 1,
+  "backend": "hybrid",
+  "cutoff": 24,
+  "foundry": {
+    "name": "validation-single-mode-fock-response-v1",
+    "max_modes": 1,
+    "max_squeezing_r": 1.2,
+    "allow_non_gaussian": true,
+    "allow_measurements": true,
+    "inject_mode_loss": false,
+    "mode_loss_eta": [1.0]
+  },
+  "gates": [
+    { "type": "inject_fock", "n": 2, "mode": 0 },
+    { "type": "phase", "theta": 0.31, "mode": 0 },
+    { "type": "displace", "q": 0.07, "p": -0.03, "mode": 0 }
+  ]
+}

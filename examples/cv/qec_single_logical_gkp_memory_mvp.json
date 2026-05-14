@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "seed": 9012026,
+  "modes": 1,
+  "backend": "gaussian",
+  "foundry": {
+    "name": "qec-gkp-memory-mvp-v1",
+    "max_modes": 1,
+    "max_squeezing_r": 1.2,
+    "allow_non_gaussian": true,
+    "allow_measurements": true,
+    "inject_mode_loss": false,
+    "mode_loss_eta": [1.0]
+  },
+  "gates": [
+    { "type": "inject_gkp", "delta": 0.25, "mode": 0 },
+    { "type": "displace", "q": 0.30, "p": -0.18, "mode": 0 },
+    { "type": "thermal_loss", "eta": 0.97, "n_th": 0.015, "mode": 0 },
+
+    { "type": "measure_homodyne", "theta": 0.0, "mode": 0 },
+    {
+      "type": "gkp_decode_displace",
+      "on": 0,
+      "source_value_index": 0,
+      "lattice_spacing": 1.772453850905516,
+      "target_lattice_index": 0,
+      "gain_q": 1.0,
+      "gain_p": 0.0,
+      "bias_q": 0.0,
+      "bias_p": 0.0,
+      "mode": 0
+    },
+
+    { "type": "phase", "theta": 1.57079632679, "mode": 0 },
+    { "type": "thermal_loss", "eta": 0.98, "n_th": 0.010, "mode": 0 },
+    { "type": "measure_homodyne", "theta": 0.0, "mode": 0 },
+    {
+      "type": "gkp_decode_displace",
+      "on": 1,
+      "source_value_index": 0,
+      "lattice_spacing": 1.772453850905516,
+      "target_lattice_index": 0,
+      "gain_q": 0.0,
+      "gain_p": 1.0,
+      "bias_q": 0.0,
+      "bias_p": 0.0,
+      "mode": 0
+    },
+    { "type": "phase", "theta": -1.57079632679, "mode": 0 },
+
+    { "type": "loss", "eta": 0.985, "mode": 0 },
+    { "type": "measure_homodyne", "theta": 0.0, "mode": 0 },
+    {
+      "type": "gkp_decode_displace",
+      "on": 2,
+      "source_value_index": 0,
+      "lattice_spacing": 1.772453850905516,
+      "target_lattice_index": 0,
+      "gain_q": 1.0,
+      "gain_p": 0.0,
+      "bias_q": 0.0,
+      "bias_p": 0.0,
+      "mode": 0
+    }
+  ]
+}

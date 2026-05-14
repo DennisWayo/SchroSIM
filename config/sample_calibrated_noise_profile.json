@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "device_id": "pqc-photonics-rig-a17",
+  "device_name": "PQC Foundry Rack A17",
+  "calibrated_at": "2026-04-30T00:00:00Z",
+  "mode_count": 4,
+  "correlations": {
+    "loss_eta": [
+      [0.00012, 0.00003, 0.00001, 0.00000],
+      [0.00003, 0.00014, 0.00002, 0.00001],
+      [0.00001, 0.00002, 0.00011, 0.00002],
+      [0.00000, 0.00001, 0.00002, 0.00010]
+    ],
+    "thermal": [
+      [0.0024, 0.0006, 0.0002, 0.0001],
+      [0.0006, 0.0022, 0.0004, 0.0002],
+      [0.0002, 0.0004, 0.0021, 0.0003],
+      [0.0001, 0.0002, 0.0003, 0.0020]
+    ],
+    "phase_rad": [
+      [0.0015, 0.0004, 0.0002, 0.0001],
+      [0.0004, 0.0018, 0.0003, 0.0002],
+      [0.0002, 0.0003, 0.0016, 0.0003],
+      [0.0001, 0.0002, 0.0003, 0.0014]
+    ],
+    "displacement": [
+      [0.0009, 0.0002, 0.0001, 0.0000],
+      [0.0002, 0.0010, 0.0002, 0.0001],
+      [0.0001, 0.0002, 0.0011, 0.0002],
+      [0.0000, 0.0001, 0.0002, 0.0009]
+    ]
+  },
+  "detector_model": {
+    "homodyne_sigma": 0.013,
+    "heterodyne_sigma": 0.018,
+    "dark_count_rate": 0.0007
+  },
+  "drift_model": {
+    "loss_eta_per_sample": -0.00002,
+    "thermal_per_sample": 0.00030,
+    "phase_rad_per_sample": 0.00018,
+    "displacement_per_sample": 0.00012
+  },
+  "notes": "Sample calibrated tensor profile for SchroSIM enterprise UI Monte Carlo analysis."
+}

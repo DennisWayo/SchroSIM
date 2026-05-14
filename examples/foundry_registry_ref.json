@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "seed": 314159,
+  "modes": 1,
+  "backend": "gaussian",
+  "foundry_profile": {
+    "profile_id": "enterprise-default",
+    "version": 1
+  },
+  "gates": [
+    { "type": "displace", "q": 0.3, "p": 0.0, "mode": 0 }
+  ]
+}

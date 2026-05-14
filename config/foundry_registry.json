@@ -1,0 +1,40 @@
+{
+  "profiles" : [
+    {
+      "approvers" : [
+        "platform-admin"
+      ],
+      "history" : [
+        {
+          "action" : "created_draft",
+          "by" : "platform-admin",
+          "note" : "initial draft",
+          "timestamp" : "2026-04-24T09:56:18.112Z"
+        },
+        {
+          "action" : "promoted_approved",
+          "by" : "platform-admin",
+          "note" : "approved for production",
+          "timestamp" : "2026-04-24T09:56:31.282Z"
+        }
+      ],
+      "profile_id" : "enterprise-default",
+      "signature" : "3b16e307c522022e23757e677a89e42d17e90ea5d039c0c837c1d740d776c471",
+      "spec" : {
+        "allow_measurements" : true,
+        "allow_non_gaussian" : true,
+        "inject_mode_loss" : true,
+        "max_modes" : 64,
+        "max_squeezing_r" : 1.2,
+        "mode_loss_eta" : [
+          0.995
+        ],
+        "name" : "enterprise-default-v1"
+      },
+      "status" : "approved",
+      "valid_from" : "2026-04-24T09:56:18.108Z",
+      "version" : 1
+    }
+  ],
+  "schema_version" : 1
+}

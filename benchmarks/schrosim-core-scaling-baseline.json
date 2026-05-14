@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "suite": "scaling",
+  "cases": [
+    {
+      "name": "scaling_mode2_depth24",
+      "median_wall_ms": 0.094,
+      "median_exec_ms": 0.0135
+    },
+    {
+      "name": "scaling_mode8_depth24",
+      "median_wall_ms": 0.3084,
+      "median_exec_ms": 0.072
+    },
+    {
+      "name": "scaling_mode16_depth24",
+      "median_wall_ms": 0.8962,
+      "median_exec_ms": 0.2664
+    },
+    {
+      "name": "scaling_mode8_depth8",
+      "median_wall_ms": 0.1127,
+      "median_exec_ms": 0.0226
+    },
+    {
+      "name": "scaling_mode8_depth32",
+      "median_wall_ms": 0.4488,
+      "median_exec_ms": 0.0996
+    },
+    {
+      "name": "scaling_mode8_depth64",
+      "median_wall_ms": 1.0451,
+      "median_exec_ms": 0.1938
+    }
+  ]
+}

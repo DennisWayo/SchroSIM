@@ -6,74 +6,118 @@
   <img src="https://img.shields.io/badge/macOS-Apple%20Silicon-black?logo=apple&logoColor=white" />
   <img src="https://img.shields.io/badge/Metal-GPU-black?logo=apple&logoColor=white" />
   <img src="https://img.shields.io/badge/License-MIT-black" />
+
+  <!-- Project Signals -->
+  <img src="https://img.shields.io/badge/CI-GitHub%20Actions-black?logo=githubactions&logoColor=white" />
+  <img src="https://img.shields.io/badge/Docs-Available-black?logo=readthedocs&logoColor=white" />
+  <img src="https://img.shields.io/badge/Release-Latest-black?logo=github&logoColor=white" />
 </p>
 
 # SchroSIM
 
-**SchroSIM** is an **architecture-level, physics-aware simulator** for **exploring, validating, and mapping photonic quantum circuits** under realistic constraints (loss, finite squeezing, non-Gaussian resources).
+SchroSIM is a continuous-variable (CV) photonic quantum simulation stack for designing, compiling, and simulating hardware-like photonic quantum circuits. It combines a core SDK for developer integration, a CLI for terminal-based circuit execution, and an intelligent IDE for visual circuit design, runtime control, and analysis.
 
-It targets the “missing middle layer” between:
-- **high-level algorithmic abstractions** (e.g., PennyLane), and
-- **state-level continuous-variable simulation** (e.g., Strawberry Fields).
+Built for students, researchers, and quantum foundry engineers, SchroSIM provides an exact-solution simulation path for tractable circuits and scalable backend options for larger workflows.
 
-SchroSIM is designed to help researchers and educators reason about how abstract photonic programs map onto physical device layers and architectural trade-offs.
+## Documentation
+Full project documentation is in [docs/README.md](docs/README.md).
 
-## Why SchroSIM?
+## The Need
+Photonic and CV workflows need fast iteration across modeling, backend selection, and error-correction validation. In practice, teams often lose time moving between disconnected tools for design, compilation, execution, and debugging.
 
-Photonic quantum tooling often forces a choice:
+SchroSIM is built to make those workflows practical in one platform, with reproducible runs and backend-aware execution policies that support both research and pre-hardware validation.
 
-1. **Algorithm-first** frameworks that hide device physics (great for QML and prototyping, weaker for architectural reasoning), or  
-2. **Physics-first** simulators that are powerful but heavy for rapid architecture exploration.
+## Circuit and Runtime Failure Modes (Why They Matter)
+The failure modes below are workflow-level circuit/runtime issues common in photonic and CV pipelines. They are not, by default, indicators of defects in SchroSIM itself.
 
-**SchroSIM bridges the gap** with a modular approach for:
+Even promising photonic circuit designs can fail at compile time or simulation time. Common failure modes include:
+1. non-physical parameter sets (invalid squeezing ranges, inconsistent phase settings, or state assumptions),
+2. backend/model mismatch (idealized circuits mapped to noisy or hardware-constrained targets without adaptation),
+3. numerical limits (insufficient cutoff dimensions, precision issues, or unstable optimization settings),
+4. hardware-like constraints (unsupported operations, timing/order conflicts, and foundry policy limits).
 
-- **Architecture exploration:** phase boundaries for loss/squeezing/non-Gaussian resources  
-- **Hardware-aware mapping:** logical → device → physical interpretation layers  
-- **Education:** intuitive visualizations (phase space, quadratures, Wigner functions)  
-- **Rapid “what-if” studies:** design rules without full wavefunction simulation
+SchroSIM helps surface these issues early with backend-aware checks, reproducible runtime configuration, and analysis views that explain where and why execution failed.
 
+## Model-Exact Scope
+SchroSIM provides model-exact simulation for tractable Gaussian CV workloads under the stated model assumptions. For larger, non-Gaussian-heavy, or more hardware-constrained cases, SchroSIM supports backend-aware execution paths that use controlled approximations for scalability and runtime practicality.
 
-## What SchroSIM is (and is not)
+Use this rule of thumb:
+1. use the model-exact Gaussian path for ground-truth studies, validation, and small-to-mid scale circuit analysis,
+2. use scalable/hybrid/Fock policy-targeted paths as controlled approximations for larger experiments and pre-hardware iteration.
 
- **SchroSIM is:**
-- an architecture reasoning tool for photonic quantum circuits
-- a platform for hardware-aware circuit exploration
-- a modular simulator with Gaussian + non-Gaussian pathways
+## Design-to-Result Workflow
+1. design a circuit in the IDE or define it in project JSON,
+2. compile to backend-aware intermediate/runtime configuration,
+3. run static checks for operation support and constraint compatibility,
+4. execute simulation on selected path (model-exact Gaussian or controlled approximation backend path),
+5. analyze observables, runtime metrics, and QEC outcomes,
+6. iterate parameters, backend, and correction strategy with reproducible settings.
 
- **SchroSIM is not intended to replace:**
-- **PennyLane** (algorithmic abstraction + QML workflows)
-- **Strawberry Fields** (full CV state simulation engine)
+## Failure Diagnostics in SchroSIM
+| Failure class | Typical symptom | Likely cause | Mitigation |
+|---|---|---|---|
+| Non-physical parameters | compile rejection or invalid state warning | squeezing/phase/state assumptions outside valid region | enforce parameter bounds and validate state configuration before execution |
+| Backend mismatch | operator unsupported or policy violation | circuit authored for ideal model but run on constrained target | remap operations to backend-supported primitives and recompile |
+| Numerical instability | divergent metrics or inconsistent repeated results | cutoff too small, unstable optimizer, precision loss | increase cutoff, tune solver/optimizer settings, fix deterministic seeds |
+| Resource overrun | excessive runtime/memory | circuit scale exceeds selected method limits | switch backend mode, reduce circuit depth/modes, profile bottlenecks |
+| Constraint conflict | schedule/order/timing failure | gate ordering violates foundry/runtime constraints | use compiler ordering hints and backend-specific scheduling policies |
 
-Instead, SchroSIM aims to **complement** these projects by focusing on the architecture layer and integration boundaries.
+## Hardware-Like and Foundry Constraints
+SchroSIM is built for pre-hardware realism. Backend-aware compilation and runtime policy checks help teams identify unsupported operations, ordering constraints, and integration risks before tape-out or hardware queue submission.
 
+## Numerical Reliability and Reproducibility
+For technical studies, use fixed seeds, pinned runtime configuration, and explicit cutoff/precision settings. This makes experiments repeatable and simplifies regression checks across backend changes.
 
-## Project Highlights
+## Project Maturity
+SchroSIM is under active development. Core workflows for circuit design, compilation, execution, and analysis are available, with ongoing expansion of backend coverage and diagnostics depth.
 
-- **Language:** Swift + SwiftUI + Metal
-- **Simulation Modes:**  
-  - *Gaussian* (symplectic / covariance formalism)  
-  - *Non-Gaussian* (Fock/tensor-based modules; staged roadmap)
-- **Platform:** macOS (Apple Silicon), with future portability goals
-- **GUI (planned):** drag-and-drop photonic circuit builder
-- **Compiler Layer (planned):** intermediate representation (IR) for hardware-agnostic mapping
-- **Backends (roadmap):** CPU + GPU acceleration; optional integration with external QPU workflows
+## Toolchain Prerequisites
+SchroSIM source workflows require Python, Swift, and Rust toolchains.
 
+Verify your environment:
+```bash
+python3 --version
+pip --version
+swift --version
+rustc --version
+cargo --version
+```
 
-## Concept Note / Preprint
+## Quick Start
+For the published Python package:
+```bash
+pip install schrosim
+```
 
-- **TechRxiv:** https://www.techrxiv.org/users/924890/articles/1304432-schrosim-a-schr%C3%B6dinger-inspired-scalable-quantum-photonic-circuit-simulator-for-hardware-agnostic-quantum-computing  
-- Local copy (optional): `docs/SchroSIM_ConceptNote.pdf`
+`pip` installs the package dependencies defined by that published distribution.
 
-## Quickstart (documentation-first MVP)
+For this source repository:
+```bash
+swift run schrosim-cli --help
+```
 
-SchroSIM is currently under active development. If you want to contribute now:
+Python 3 is required for helper scripts, but there are currently no third-party Python package requirements.
 
-- Start here: **docs/architecture.md**
-- Then: **docs/quickstart.md**
-- Examples roadmap: **docs/examples.md**
+## CLI: Run Demos
+Run Boson Sampling:
+```bash
+schrosim run examples/runtime_default_foundry.json --backend hybrid
+```
 
-## Roadmap
+Run Quantum Error Correction:
+```bash
+schrosim run examples/cv/qec_single_logical_gkp_memory_mvp.json --backend hybrid
+```
 
-See ROADMAP.md for milestones and deliverables.
+## Optional: Run from CLion
+CLion is recommended for contributor workflows (debugging, stepping through code, and managing run configurations). Keep CLI commands as the primary execution path for reproducible runs and CI alignment.
 
-## Repository Structure
+## IDE: SchroSIM Intelligent Platform
+![SchroSIM Intelligent Platform](docs/ui-mockups/schrosim-intelligent-platform.png)
+
+The IDE is focused on:
+1. project-scoped circuit workflows,
+2. backend-aware execution policies,
+3. analysis views for simulation and QEC outcomes.
+
+Status: active development.

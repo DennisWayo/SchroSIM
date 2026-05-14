@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "suite": "core",
+  "cases": [
+    {
+      "name": "basic_loss_gaussian",
+      "median_wall_ms": 0.018,
+      "median_exec_ms": 0.0004
+    },
+    {
+      "name": "seeded_homodyne_gaussian",
+      "median_wall_ms": 0.0137,
+      "median_exec_ms": 0.0005
+    },
+    {
+      "name": "fock_injection_fock",
+      "median_wall_ms": 1.0738,
+      "median_exec_ms": 1.0415
+    },
+    {
+      "name": "fock_injection_hybrid",
+      "median_wall_ms": 0.8748,
+      "median_exec_ms": 0.8415
+    },
+    {
+      "name": "complex_foundry_hybrid",
+      "median_wall_ms": 0.0302,
+      "median_exec_ms": 0.0045
+    }
+  ]
+}

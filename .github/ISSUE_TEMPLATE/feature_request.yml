@@ -1,0 +1,42 @@
+name: Feature Request
+description: Propose an enhancement for public SchroSIM components (CLI/core/docs).
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement
+      description: What workflow problem are you trying to solve?
+      placeholder: As a user, I need...
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed Solution
+      description: Describe the preferred solution and expected behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: List alternatives and tradeoffs you considered.
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact and Validation
+      description: Which commands, tests, benchmarks, or examples should validate the change?
+      placeholder: |
+        - Affected command(s):
+        - Validation command(s):
+        - Expected metric/output:
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope Confirmation
+      options:
+        - label: This request targets public repo scope (CLI/core/docs) and not private enterprise GUI components.
+          required: true

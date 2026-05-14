@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "roles": {
+    "admin": [
+      "view",
+      "export",
+      "share"
+    ],
+    "approver": [
+      "view",
+      "export",
+      "share"
+    ],
+    "editor": [
+      "view",
+      "export"
+    ],
+    "viewer": [
+      "view"
+    ]
+  }
+}

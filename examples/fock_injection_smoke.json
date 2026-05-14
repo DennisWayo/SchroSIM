@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "seed": 9,
+  "modes": 1,
+  "backend": "auto",
+  "cutoff": 20,
+  "foundry": {
+    "name": "fock-dev",
+    "max_modes": 1,
+    "allow_non_gaussian": true,
+    "allow_measurements": true,
+    "inject_mode_loss": false,
+    "mode_loss_eta": [1.0]
+  },
+  "gates": [
+    { "type": "inject_fock", "n": 1, "mode": 0 },
+    { "type": "phase", "theta": 0.2, "mode": 0 },
+    { "type": "displace", "q": 0.05, "p": -0.02, "mode": 0 }
+  ]
+}
