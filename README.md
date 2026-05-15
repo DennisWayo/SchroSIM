@@ -6,7 +6,6 @@
   <img src="https://img.shields.io/badge/macOS-Apple%20Silicon-black?logo=apple&logoColor=white" />
   <img src="https://img.shields.io/badge/Metal-GPU-black?logo=apple&logoColor=white" />
   <img src="https://img.shields.io/badge/License-MIT-black" />
-
   <!-- Project Signals -->
   <a href="https://github.com/DennisWayo/SchroSIM/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/DennisWayo/SchroSIM/ci.yml?branch=master&label=CI&logo=githubactions&logoColor=white&labelColor=black&color=black" alt="CI" /></a>
   <a href="https://github.com/DennisWayo/SchroSIM/actions/workflows/docs-pages.yml"><img src="https://img.shields.io/github/actions/workflow/status/DennisWayo/SchroSIM/docs-pages.yml?branch=master&label=Docs&logo=readthedocs&logoColor=white&labelColor=black&color=black" alt="Docs" /></a>
