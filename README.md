@@ -8,9 +8,9 @@
   <img src="https://img.shields.io/badge/License-MIT-black" />
 
   <!-- Project Signals -->
-  <img src="https://img.shields.io/badge/CI-GitHub%20Actions-black?logo=githubactions&logoColor=white" />
-  <img src="https://img.shields.io/badge/Docs-Available-black?logo=readthedocs&logoColor=white" />
-  <img src="https://img.shields.io/badge/Release-Latest-black?logo=github&logoColor=white" />
+  <a href="https://github.com/DennisWayo/SchroSIM/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/DennisWayo/SchroSIM/ci.yml?branch=master&label=CI&logo=githubactions&logoColor=white&labelColor=black&color=black" alt="CI" /></a>
+  <a href="https://github.com/DennisWayo/SchroSIM/actions/workflows/docs-pages.yml"><img src="https://img.shields.io/github/actions/workflow/status/DennisWayo/SchroSIM/docs-pages.yml?branch=master&label=Docs&logo=readthedocs&logoColor=white&labelColor=black&color=black" alt="Docs" /></a>
+  <a href="https://pypi.org/project/schrosim/"><img src="https://img.shields.io/pypi/v/schrosim?label=Release&logo=pypi&logoColor=white&labelColor=black&color=black" alt="Release" /></a>
 </p>
 
 ## SchroSIM
@@ -127,3 +127,13 @@ schrosim run examples/cv/qec_single_logical_gkp_memory_mvp.json --backend hybrid
 
 ### Optional: Run from CLion
 CLion is recommended for contributor workflows (debugging, stepping through code, and managing run configurations). Keep CLI commands as the primary execution path for reproducible runs and CI alignment.
+
+### Ecosystem Comparison (High-Level)
+| Framework | Primary focus | Photonic scope | Execution path | Typical fit |
+|---|---|---|---|---|
+| [SchroSIM](https://denniswayo.github.io/SchroSIM/) | CV photonic circuit simulation with backend-aware compilation, runtime diagnostics, and QEC-oriented workflows | Gaussian + selected non-Gaussian workflows (JSON/CLI flow) | Local classical simulation (`gaussian`, `fock`, `hybrid`; CPU/Metal where available) | Reproducible research workflows, QEC scenario studies, validation pipelines, and hardware-like prechecks |
+| [Strawberry Fields](https://strawberryfields.ai/photonics/) | Full-stack Python framework for photonic quantum computing | Continuous-variable photonics, Gaussian/Fock-style workflows | Local simulators + remote execution on Xanadu photonic hardware/cloud | CV algorithm research and cloud photonic experiments |
+| [Perceval](https://perceval.quandela.net/docs/v1.1/) | Linear optics quantum framework | Discrete-variable / linear-optics photonic circuits | Local simulation + remote execution on simulator/QPU platforms | Linear-optics experiment design, sampling, and cloud QPU workflows |
+| [PennyLane](https://docs.pennylane.ai/) | Differentiable quantum programming and quantum ML framework | Photonics via plugins (not photonic-only core) | Local simulators + hardware integrations via devices/plugins | Hybrid quantum-classical ML workflows, gradient-based circuit research, and QEC prototyping/education workflows |
+| [Qibo](https://qibo.science/qibo/stable/) | General quantum middleware (simulation + hardware control ecosystem) | Not photonic-specific by default | Classical simulation backends + self-hosted hardware control stack | General quantum algorithm development and hardware-control integration |
+| [QuTiP](https://qutip.readthedocs.io/en/latest/) | Open quantum-system dynamics and quantum optics simulation toolkit | Broad quantum optics modeling (not photonic-QPU specific) | Local numerical simulation toolkit | Physics-first quantum optics/open-system simulation and education |
