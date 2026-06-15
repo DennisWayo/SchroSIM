@@ -1,4 +1,8 @@
 <p align="center">
+  <img src="assets/schrosim-logo.png" alt="SchroSIM - Simulating Quantum Light" width="100%" />
+</p>
+
+<p align="center">
   <!-- Core Languages & Platform -->
   <img src="https://img.shields.io/badge/Rust-black?logo=rust&logoColor=white" />
   <img src="https://img.shields.io/badge/Python-black?logo=python&logoColor=white" />
@@ -12,7 +16,6 @@
   <a href="https://pypi.org/project/schrosim/"><img src="https://img.shields.io/pypi/v/schrosim?label=Release&logo=pypi&logoColor=white&labelColor=black&color=black" alt="Release" /></a>
 </p>
 
-## SchroSIM
 
 SchroSIM is a continuous-variable (CV) photonic quantum simulation stack for designing, compiling, and simulating hardware-like photonic quantum circuits. The open-source core combines an SDK for developer integration and a CLI for terminal-based circuit execution.
 
